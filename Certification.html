@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Portfolio</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="certification.html">Certification</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="certification">
+        <h1>Certifications</h1>
+        <p>Here are some of my certificates:</p>
+    
+        <div class="certificates-container">
+            <!-- Certificate 1 -->
+            <div class="certificate">
+                <img src="Assests/CEH v12 Certificate.jpg" alt="Certificate 1" class="certificate-img">
+                <p class="certificate-description">CEH v12</p>
+            </div>
+    
+            <!-- Certificate 2 -->
+            <div class="certificate">
+                <img src="Assests/CCNA Certificate.jpg" alt="Certificate 2" class="certificate-img">
+                <p class="certificate-description">Cisco Certified Network Administrator</p>
+            </div>
+    
+            <!-- Add more certificates as needed -->
+            <div class="certificate">
+                <img src="Assests/RHCE Certificate_.jpg" alt="Certificate 3" class="certificate-img">
+                <p class="certificate-description">Red Hat Certified Engineer</p>
+            </div>
+    
+            <div class="certificate">
+                <img src="Assests/RHCSA Certificate_.jpg" alt="Certificate 3" class="certificate-img">
+                <p class="certificate-description">Red Hat Certified System Administrator</p>
+            </div>
+
+            <div class="certificate">
+                <img src="Assests/Web-Security & Bug-Bounty.jpg" alt="Certificate 3" class="certificate-img">
+                <p class="certificate-description">Web-Security & Bug-Bounty</p>
+            </div>
+
+            <div class="certificate">
+                <img src="Assests/Wireshark Certificate.jpg" alt="Certificate 3" class="certificate-img">
+                <p class="certificate-description">Wireshark Hands-On Practice </p>
+            </div>
+
+            
+        </div>
+    </section>
+    
+
+    <script>
+        // Function to trigger shrink effect before navigating
+        function triggerTransitionOut() {
+            document.body.classList.add('transition-out'); // Shrink and fade out the page
+        }
+
+        // Add transition-in effect after the new page has fully loaded
+        window.addEventListener('load', function () {
+            document.body.classList.add('transition-in'); // Apply pop-up effect after load
+        });
+
+        // Trigger the transition-out effect before leaving the page
+        window.addEventListener('beforeunload', function () {
+            triggerTransitionOut(); // Apply the shrink effect before the page unloads
+        });
+    </script>
+</body>
+</html>

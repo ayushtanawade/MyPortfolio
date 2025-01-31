@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Portfolio</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="certification.html">Certification</a></li>
+            <li class="active"><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="work">
+        <h1>My Projects</h1>
+        <p></p>
+        <div class="projects-container">
+            <!-- Example Project Folder -->
+            <div class="project-folder">
+                <div class="folder-cover" onclick="toggleFolder(this)">
+                    <h3>Project 1</h3>
+                </div>
+                <div class="project-screenshots">
+                    <img src="Assests/JKL.png" alt="Screenshot 1" onclick="openModal(this.src)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for viewing project screenshots -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-image" alt="Project Screenshot">
+    </div>
+
+    <script>
+        // Toggle folder to show/hide screenshots
+        function toggleFolder(folder) {
+            const screenshots = folder.nextElementSibling;
+            screenshots.classList.toggle('open');
+        }
+
+        // Open modal and display the project screenshot
+        function openModal(imageSrc) {
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modal-image');
+            modalImage.src = imageSrc;
+            modal.style.display = 'block';
+        }
+
+        // Close the modal
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

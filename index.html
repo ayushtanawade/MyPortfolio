@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">Portfolio</a>
+        <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="certification.html">Certification</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="home">
+        <div class="home-info">
+            <h1>Ayush Tanawade</h1>
+
+            <h2>
+                <span style="--i: 0">I</span><span style="--i: 1">'</span><span style="--i: 2">m</span><span style="--i: 3"> </span>
+                <span style="--i: 4">a</span>
+                <span style="--i: 5"> </span>
+                <span style="--i: 6">C</span><span style="--i: 7">y</span><span style="--i: 8">b</span><span style="--i: 9">e</span><span style="--i: 10">r</span>
+                <span style="--i: 11">S</span><span style="--i: 12">e</span><span style="--i: 13">c</span><span style="--i: 14">u</span><span style="--i: 15">r</span><span style="--i: 16">i</span><span style="--i: 17">t</span><span style="--i: 18">y</span>
+                <span style="--i: 19"> </span><span style="--i: 20">S</span><span style="--i: 21">t</span><span style="--i: 22">u</span><span style="--i: 23">d</span><span style="--i: 24">e</span><span style="--i: 25">n</span><span style="--i: 26">t</span>
+                <span style="--i: 27">&</span><span style="--i: 28"> </span>
+                <span style="--i: 29">F</span><span style="--i: 30">r</span><span style="--i: 31">o</span><span style="--i: 32">n</span><span style="--i: 33">t</span><span style="--i: 34">e</span><span style="--i: 35">n</span><span style="--i: 36">d</span><span style="--i: 37"> </span>
+                <span style="--i: 38">D</span><span style="--i: 39">e</span><span style="--i: 40">v</span><span style="--i: 41">e</span><span style="--i: 42">l</span><span style="--i: 43">o</span><span style="--i: 44">p</span><span style="--i: 45">e</span><span style="--i: 46">r</span>
+            </h2>
+            
+            <p>I am a passionate and driven IT professional with a strong foundation in networking, cybersecurity, and Linux system administration, always eager to explore new technologies and enhance my knowledge in the evolving world of IT.
+                My goal is to leverage my technical skills and hands-on experience to contribute to innovative and security-focused projects.
+
+                Let’s connect and discuss all things networking, security, and open-source technologies!</p>
+
+            <div class="btn-sci">
+                <a href="AYUSH CV.pdf" class="btn" download>Download CV</a>
+                <div class="sci">
+                    <a href="https://www.instagram.com/ay_ush1940?igsh=MXFybnp3emtuZmtiOQ==" target="_blank"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://github.com/ayushtanawade" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/ayushtanawade/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="mailto:ayush12tanawade@gmail.com" target="_blank"><i class='bx bxl-gmail'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="Assests/photo.png" alt="Profile Photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Function to trigger shrink effect before navigating
+        function triggerTransitionOut() {
+            document.body.classList.add('transition-out'); // Shrink and fade out the page
+        }
+        
+        // Add transition-in effect after the new page has fully loaded
+        window.addEventListener('load', function () {
+            document.body.classList.add('transition-in'); // Apply pop-up effect after load
+        });
+        
+        // Trigger the transition-out effect before leaving the page
+        window.addEventListener('beforeunload', function () {
+            triggerTransitionOut(); // Apply the shrink effect before the page unloads
+        });
+        </script>
+        
+</body>
+</html>

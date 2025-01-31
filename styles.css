@@ -1,0 +1,631 @@
+/* General Styles */
+body {
+    background-color: #1f242d;
+    color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 25px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin-left: 35px;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover a,
+.navbar ul li .active a {
+    color: #49c5b6;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: #fff;
+    background-color: #000;
+}
+
+/* Home Info H1 Typing Effect */
+/* Home Info H1 Typing Effect */
+.home-info h1 {
+    font-size: 45px;
+    font-family: 'Courier New', Courier, monospace; /* Keyboard letter font */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow for typing effect */
+    
+    display: inline-block;
+    
+}
+
+.home-info h2 {
+    font-size: 25px;
+    margin-top: 10px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.home-info h2 span {
+    display: inline-block;
+    transform: scale(0); /* Initially shrink the letters */
+    animation: pop-up 1s ease-in-out forwards; /* Smooth pop-up animation */
+    animation-delay: calc(var(--i) * 0.1s); /* Stagger the animation for each letter */
+}
+
+/* Define the animation for the "pop-up" effect */
+@keyframes pop-up {
+    0% {
+        transform: scale(0); /* Start with the letter fully shrunk */
+        opacity: 0; /* Fully transparent */
+    }
+    50% {
+        transform: scale(1.2); /* Slightly larger than normal size */
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        transform: scale(1); /* Return to normal size */
+    }
+}
+
+.home-info p {
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #49c5b6;
+    border: 2px solid #49c5b6;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #49c5b6;
+    font-size: 16px;
+    color: #1f242d;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #49c5b6;
+    box-shadow: none;
+}
+
+.home-info .btn-sci .sci {
+    margin-left: 20px;
+}
+
+.home-info .btn-sci .sci a {
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid #49c5b6;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #49c5b6;
+    margin: 0 8px;
+    transition: 0.5s;
+}
+
+.home-info .btn-sci .sci a:hover {
+    background: #49c5b6;
+    color: #1f242d;
+    box-shadow: 0 0 10px #49c5b6;
+}
+
+/* Image Box Styles */
+.home-img .img-box {
+    position: relative;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home-img .img-box::before {
+    content: '';
+    position: absolute;
+    width: 180%;
+    height: 180%;
+    border-radius: 50%;
+    background: conic-gradient(#49c5b6 0%, transparent 60%);
+    z-index: -1;
+    animation: rotate-border 4s linear infinite;
+}
+
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.home-img .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.home-img .img-item img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* General Styles */
+body {
+    background-color: #1f242d;
+    color: #fff;
+    transition: opacity 0.5s ease-in-out; /* Transition for fading in */
+    opacity: 1; /* Initial state: fully visible */
+    overflow: hidden; /* Disable scrolling during transition */
+}
+
+/* Class that triggers page transition (shrink) */
+body.transition-out {
+    animation: shrink 0.5s forwards; /* Shrink and fade out effect */
+}
+
+/* Class that triggers page popup effect (grow) */
+body.transition-in {
+    animation: popUp 0.5s forwards; /* Pop-up and fade in effect */
+}
+
+/* Animation for shrinking the page */
+@keyframes shrink {
+    0% {
+        transform: scale(1); /* Full size */
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        transform: scale(0); /* Shrink to center */
+        opacity: 0; /* Fade out */
+    }
+}
+
+/* Animation for popping up the new page */
+@keyframes popUp {
+    0% {
+        transform: scale(0); /* Start small */
+        opacity: 0; /* Fully transparent */
+    }
+    100% {
+        transform: scale(1); /* Full size */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Disable scrolling during transition */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Allow the certification section to scroll */
+/* Certification Section Styles */
+.certification {
+    padding: 20px;
+    text-align: center;
+    max-height: 100vh;
+    overflow-y: auto;
+    margin-top: 80px; /* Space for navbar */
+    background-color: #000;
+}
+
+.certification h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.certification p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+
+/* Certificate Folder Look */
+/* Certification Section */
+.certification {
+    padding: 40px 20px;
+    text-align: center;
+    max-height: 100vh;
+    overflow-y: auto;
+    margin-top: 80px; /* Space for navbar */
+}
+
+/* Heading style */
+.certification h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #49c5b6;
+    font-weight: bold;
+}
+
+/* Certificate Container (Wall of Fame) */
+.certificates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible columns */
+    gap: 20px; /* Spacing between certificates */
+    justify-items: center;
+    margin-top: 20px;
+}
+
+/* Certificate Box */
+.certificate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #49c5b6;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 250px; /* Set max-width for uniform size */
+    background: #2b303b;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Certificate Image Style */
+.certificate-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Certificate Description */
+.certificate-description {
+    font-size: 1rem;
+    color: #49c5b6;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #000; /* Dark background for contrast */
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Space for navbar */
+}
+
+.contact h1 {
+    font-size: 2.5rem;
+    color: #49c5b6;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #000;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #49c5b6;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #49c5b6;
+    background-color: #3a434e;
+    outline: none;
+}
+
+/* Textarea Styles */
+textarea {
+    resize: vertical;
+    min-height: 150px;
+    max-height: 300px;
+}
+
+/* Button Style */
+button[type="submit"] {
+    padding: 15px 30px;
+    background-color: #49c5b6;
+    color: #1f242d;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: transparent;
+    color: #49c5b6;
+    border: 2px solid #49c5b6;
+}
+
+/* For small screens (Responsive design) */
+@media (max-width: 768px) {
+    .contact h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        width: 90%;
+        padding: 25px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 1rem;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 25px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin-left: 35px;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover a,
+.navbar ul li .active a {
+    color: #49c5b6;
+}
+
+/* Additional styles for success/error messages */
+#success-message, #error-message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+#success-message {
+    color: #49c5b6; /* Green for success */
+}
+
+#error-message {
+    color: #ff4747; /* Red for error */
+}
+
+/* Projects Section */
+.work {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    margin-top: 80px;
+}
+
+.work h1 {
+    font-size: 2.5rem;
+    color: #49c5b6;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.work p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* Projects Container */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Project Folder */
+.project-folder {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.project-folder:hover {
+    transform: translateY(-10px);
+}
+
+/* Folder Cover */
+.folder-cover {
+    background: linear-gradient(135deg, #49c5b6, #2b303b);
+    border: 2px solid #49c5b6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.folder-cover h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Project Screenshots */
+.project-screenshots {
+    display: none;
+    margin-top: 10px;
+}
+
+.project-screenshots.open {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.project-screenshots img {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.project-screenshots img:hover {
+    transform: scale(1.1);
+}
+
+/* Modal for Enlarged Image */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.modal .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
